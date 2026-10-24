@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1f1e1c">
+  <title>מדריך - Claude Remote</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <main class="app help">
+    <header class="topbar">
+      <div class="brand"><img src="icon.svg" alt="" width="26" height="26"><span>מדריך שימוש</span></div>
+      <a class="chip" href="./">חזרה לפאנל</a>
+    </header>
+
+    <p class="lead">הפאנל הזה מאפשר להמשיך כל שיחה של Claude במחשב מהטלפון, גם כשלא נמצאים ליד המחשב.</p>
+
+    <section>
+      <h2>פעם ראשונה</h2>
+      <ol>
+        <li><b>למצוא את הסיסמה:</b> במחשב, בקובץ <code>QQL\data\secrets.json</code>. שם המשתמש: <code>liron</code>, הסיסמה בשורה <code>"password"</code>.</li>
+        <li><b>להתחבר:</b> לפתוח בטלפון את <code dir="ltr">lawebs.co.il/rc</code> ולהיכנס. הכניסה נשמרת ל-30 יום.</li>
+        <li><b>להוסיף למסך הבית:</b> הפאנל מציע את זה לבד. באייפון: בספארי, כפתור השיתוף ⬆︎ ואז "הוספה למסך הבית". באנדרואיד: כפתור Install, או התפריט ⋮ ואז "הוספה למסך הבית".</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>שימוש רגיל</h2>
+      <ol>
+        <li>לפתוח את הפאנל. למעלה צריך להופיע <b>PC online</b> עם נקודה ירוקה.</li>
+        <li>רשימת השיחות נטענת לבד מהמחשב. אפשר לחפש בשדה החיפוש.</li>
+        <li><b>ללחוץ על שיחה.</b> המחשב פותח אותה ב-Claude ומפעיל Remote Control (בערך 5 שניות).</li>
+        <li><b>ללחוץ על "Open in Claude"</b>. השיחה נפתחת באפליקציית Claude בטלפון.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>כפתורים</h2>
+      <table>
+        <tr><th>⟳</th><td>רענון רשימת השיחות מהמחשב</td></tr>
+        <tr><th>🖥</th><td>צילום של מסך המחשב</td></tr>
+        <tr><th>Start Claude</th><td>פותח את Claude כשהוא סגור במחשב</td></tr>
+        <tr><th>Turn off</th><td>מכבה Remote Control לשיחה</td></tr>
+        <tr><th>Copy link</th><td>מעתיק את הקישור לשיחה</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>מה צריך במחשב</h2>
+      <ul>
+        <li>המחשב דלוק ומחובר למשתמש. מסך נעול זה בסדר.</li>
+        <li>Claude לא חייב להיות פתוח: כפתור Start Claude פותח אותו.</li>
+        <li>לא צריך להפעיל כלום: הסוכן עולה לבד בכל כניסה ל-Windows ומונע מצב שינה.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>אם משהו לא עובד</h2>
+      <ul>
+        <li><b>PC offline באדום:</b> המחשב כבוי, במצב שינה, או שהסוכן לא רץ. במחשב להריץ: <code dir="ltr">powershell -File agent\install.ps1</code> (מתוך התיקייה QQL).</li>
+        <li><b>Cloud session:</b> שיחת ענן כבר זמינה בטלפון. ללחוץ Open Claude Code ולמצוא אותה שם.</li>
+        <li><b>שגיאה שאין כפתור Remote Control:</b> בשיחה עוד לא נשלחה הודעה. לשלוח בה הודעה אחת ואז לנסות שוב.</li>
+        <li><b>לא ברור מה קורה:</b> ללחוץ 🖥 ולראות את מסך המחשב.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>בלי טלפון, מהמחשב</h2>
+      <p>להריץ <code dir="ltr">rc.cmd</code> בתיקייה QQL: מופיעה רשימה ממוספרת, מקלידים מספר והשיחה מתחברת.</p>
+    </section>
+
+    <section>
+      <h2>תחזוקה (במחשב, בתיקייה QQL)</h2>
+      <table>
+        <tr><th>העלאת שינויים לאתר</th><td><code dir="ltr">powershell -File deploy.ps1</code></td></tr>
+        <tr><th>סיסמה חדשה</th><td><code dir="ltr">powershell -File deploy.ps1 -NewPassword</code></td></tr>
+        <tr><th>התקנה / הפעלה מחדש של הסוכן</th><td><code dir="ltr">powershell -File agent\install.ps1</code></td></tr>
+        <tr><th>לוג הסוכן</th><td><code dir="ltr">agent\agent.log</code></td></tr>
+      </table>
+    </section>
+
+    <p class="foot"><a class="btn primary" href="./">חזרה לפאנל</a></p>
+  </main>
+</body>
+</html>

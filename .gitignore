@@ -1,0 +1,26 @@
+data/
+dist/
+agent/config.json
+agent/agent.log*
+__pycache__/
+
+# Python environments and generated files
+.venv/
+venv/
+*.py[cod]
+*.log
+*.log.*
+
+# Server runtime data and credentials
+.data/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Editor and operating-system files
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
